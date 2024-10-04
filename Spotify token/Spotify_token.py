@@ -24,9 +24,7 @@ tokencollector = spotipy.Spotify(auth_manager=auth_manager)
 #print out the tokens to verify that the user has been authenticated ( will probably take out later cuz it's not necessary and is sensitive)
 token_info = auth_manager.get_cached_token()
 if token_info:
-    #print(f"Access Token: {token_info['access_token']}")
-    #print(f"Refresh Token: {token_info['refresh_token']}")
-    print(f"Your access token Expires: {token_info['expires_at']}")
+    print(f"Your access token Expires: {token_info['expires_at']}") #valid for one hour (3600 seconds) I am not sure what the number that it output means. I will continue to work on this part so it is clearer to the user.
 else:
     print("No token info found. Please authorize the application.")
     auth_url = auth_manager.get_authorize_url()
